@@ -1,26 +1,60 @@
-<script setup>
-import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div class="cont">
-    <h1>
-      Здесь будет сайт крутого фотографа
-    </h1>
+  <Header />
+  <div class="cont" :style="`height:${vhComp}px`">
+    <router-view></router-view>
+    <!-- <h1>
+        Здесь будет сайт крутого фотографа
+      </h1> -->
+    <Footer />
   </div>
+  <!-- <div class="ggg">
+    ggg
+  </div> -->
 </template>
+
+<script>
+import { RouterView } from 'vue-router'
+import Header from './components/Header.vue'
+import Footer from './components/Footer.vue'
+
+export default {
+  components: {
+    Header,
+    Footer,
+  },
+  data() {
+    return {
+      vh: window.innerHeight * 0.01,
+    }
+  },
+  computed: {
+    vhComp() {
+      return this.$store.getters.getVh * 100 - 40
+    }
+  },
+  created() {
+    window.addEventListener('resize', () => {
+      this.$store.commit('SET_VH', window.innerHeight * 0.01)
+      // document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  },
+}
+</script>
 
 <style scoped>
 .cont {
   width: 100%;
-  height: 80vh;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-y: auto;
 }
 
 h1 {
   text-align: center;
+}
+
+.ggg {
+  background-color: aqua;
 }
 </style>
