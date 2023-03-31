@@ -2,7 +2,7 @@
   "redirects": [
     {
       "source": "/:path(.+)",
-      "destination": "https://github.com/iskandert",
+      "destination": "/",
       "permanent": true
     }
   ]
