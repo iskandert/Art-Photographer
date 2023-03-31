@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path(.+)",
+      "destination": "https://github.com/iskandert",
+      "permanent": true
+    }
+  ]
+}
