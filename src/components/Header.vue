@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>Ирина Толстых*</h1>
+    <h1>Ирина Толстых</h1>
     <button @click="toggleMenu">
       <Burger class="burger" :class="{ rotated: showMenu }" />
       <Close class="close" :class="{ rotated: !showMenu }" />
