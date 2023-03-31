@@ -1,11 +1,14 @@
 <template>
   <Header />
   <div class="cont" :style="`height:${vhComp}px`">
-    <router-view></router-view>
-    <!-- <h1>
-        Здесь будет сайт крутого фотографа
-      </h1> -->
-    <Footer />
+    <div class="main">
+      <div />
+      <router-view></router-view>
+      <!-- <h1>
+          Здесь будет сайт крутого фотографа
+        </h1> -->
+      <Footer class="footer" />
+    </div>
   </div>
   <!-- <div class="ggg">
     ggg
@@ -29,7 +32,7 @@ export default {
   },
   computed: {
     vhComp() {
-      return this.$store.getters.getVh * 100 - 40
+      return this.$store.getters.getVh * 100
     }
   },
   created() {
@@ -44,11 +47,18 @@ export default {
 <style scoped>
 .cont {
   width: 100%;
+  padding-top: 40px;
+  z-index: 90;
+  overflow-y: auto;
+}
+
+.main {
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow-y: auto;
 }
+
 
 h1 {
   text-align: center;

@@ -11,7 +11,7 @@ export default {
 }
 </script>
 <style scoped>
-footer {
+footer div {
   height: 40px;
 }
 </style>

@@ -30,7 +30,7 @@ import TheWelcome from '../components/TheWelcome.vue'
 
 <style scoped>
 main {
-  background-color: aquamarine;
+  /*background-color: aquamarine;*/
   height: min-content;
   width: 100px;
 }
