@@ -7,23 +7,21 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView,
-      children: [
-        {
-          path: '/about',
-          name: 'about',
-          component: () => import('../views/AboutView.vue')
-        },
-        {
-          path: '/contacts',
-          name: 'contacts',
-          component: () => import('../views/ContactsView.vue')
-        },
-        {
-          path: '/:pathMatch(.+)+',
-          redirect: '/'
-        }
-      ]
+      component: HomeView
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue')
+    },
+    {
+      path: '/contacts',
+      name: 'contacts',
+      component: () => import('../views/ContactsView.vue')
+    },
+    {
+      path: '/:pathMatch(.+)+',
+      redirect: '/'
     }
   ]
 })
