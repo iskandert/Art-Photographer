@@ -22,6 +22,10 @@ const router = createRouter({
     {
       path: '/:pathMatch(.+)+',
       redirect: '/'
+    },
+    {
+      path: '/index.html',
+      redirect: '/'
     }
   ]
 })
