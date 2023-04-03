@@ -1,9 +1,5 @@
-<script setup>
-import TheWelcome from '../components/TheWelcome.vue'
-</script>
-
 <template>
-  <main>
+  <!-- <main>
     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Reprehenderit officiis, dolore adipisci delectus esse harum
     voluptate, fuga debitis sit nisi quis, itaque corrupti. Ratione quis illum eum, ut molestiae nam.
     Rerum facere eligendi enim alias dolores quia inventore, exercitationem ex pariatur, deserunt tenetur. Delectus error
@@ -25,13 +21,55 @@ import TheWelcome from '../components/TheWelcome.vue'
     cumque. Aliquid temporibus impedit accusantium mollitia, in, commodi ipsam, reprehenderit alias odio cumque harum!
     In, iure? Non vitae sunt quasi eum aliquid incidunt nesciunt debitis similique quae nam laboriosam architecto minima
     excepturi quod illum officia quam, unde neque quis necessitatibus veniam minus! Ducimus, impedit.
-  </main>
+  </main> -->
+  <div class="album wrapper">
+    <div class="left">
+      <img :src="url" v-for="(url, idx) in photosURL.filter((_, idx) => !(idx % 2))" :key="idx" alt="just a photo">
+      <!-- <div v-for="(url, idx) in photosURL.filter((_, idx) => !(idx % 2))" :key="idx" class="photo">
+        <img :src="url" alt="just a photo">
+      </div> -->
+    </div>
+    <div class="right">
+      <!-- <div v-for="(url, idx) in photosURL.filter((_, idx) => idx % 2)" :key="idx" class="photo">
+        <img :src="url" alt="just a photo">
+      </div> -->
+      <img :src="url" v-for="(url, idx) in photosURL.filter((_, idx) => idx % 2)" :key="idx" alt="just a photo">
+
+    </div>
+
+  </div>
 </template>
+
+<script setup>
+import { photosURL } from '../config';
+
+</script>
 
 <style scoped>
 main {
   /*background-color: aquamarine;*/
   height: min-content;
   width: 100px;
+}
+
+.album {
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left,
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.photo {
+  height: min-content;
+}
+
+img {
+  width: 100%;
 }
 </style>

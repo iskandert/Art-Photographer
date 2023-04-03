@@ -1,7 +1,7 @@
 /* color palette */
 :root {
   --color-white: #ffffff;
-  --color-white-transparent: rgba(255, 255, 255, 0.8);
+  --color-white-transparent: rgba(255, 255, 255, 0.9);
   --color-white-soft: #f8f8f8;
 
   --color-black: #181818;
@@ -40,9 +40,10 @@
   --ph-color-shadow-hover: var(--color-active-light-4);
   --ph-color-shadow-active: var(--color-active-light-2);
 
-  --ph-border: 1px solid var(--color-gray-light-2);
+  --ph-border: 1px solid var(--color-gray-light-4);
   --ph-border-secondary: 1px solid var(--color-gray-light-3);
 
+  --ph-shadow: 0px 0px 15px 10px var(--color-white);
   --ph-shadow-hover: 0px 0px 15px 10px var(--ph-color-shadow-hover);
   --ph-shadow-active: 0px 0px 15px 10px var(--ph-color-shadow-active);
 }

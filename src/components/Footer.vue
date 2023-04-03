@@ -1,17 +1,28 @@
 <template>
-  <footer>
-    <div>2023</div>
+  <footer class="footer">
+    <span>
+      Made by
+      <a href="https://github.com/iskandert" target="_blank">
+        @iskandert
+      </a>
+    </span>
   </footer>
 </template>
 <script>
-import { RouterLink } from 'vue-router'
-
 export default {
 
 }
 </script>
 <style scoped>
-footer div {
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 40px;
+  padding: 15px 0;
+}
+
+span {
+  font-size: 13px;
 }
 </style>

@@ -2,7 +2,7 @@
   <Header />
   <div class="cont" :style="`height:${vhComp}px`">
     <div class="main">
-      <div />
+      <!-- <div /> -->
       <router-view></router-view>
       <!-- <h1>
           Здесь будет сайт крутого фотографа
@@ -66,5 +66,9 @@ h1 {
 
 .ggg {
   background-color: aqua;
+}
+
+.wrapper {
+  padding: 15px 15px 0;
 }
 </style>
