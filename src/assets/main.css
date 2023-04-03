@@ -42,7 +42,7 @@ button svg {
   bottom: 0;
   margin: auto;
   height: 75%;
-  width: max-content;
+  width: 75%;
 }
 
 @media (hover: hover) {
