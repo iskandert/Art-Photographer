@@ -9,8 +9,10 @@
   <div class="menu" :class="{ showed: showMenu }" :style="`height:${vhComp}px`">
     <ul>
       <li v-for="(item, idx) in menu" :key="idx" :class="{ active: $route.path === item.path }">
-        <!-- <RouterLink :to="item.path"> {{ item.name }} </RouterLink> -->
-        <RouterLink :to="item.path" @click="showMenu = false"> {{ item.name }} </RouterLink>
+        <RouterLink v-if="item.path" :to="item.path" @click="showMenu = false">
+          {{ item.name }}
+        </RouterLink>
+        <a href="#" @click="showMenu = false" v-else>{{ item.name }}</a>
       </li>
     </ul>
   </div>
@@ -29,9 +31,13 @@ export default {
     return {
       showMenu: false,
       menu: [
-        { name: 'Портфолио', path: '/' },
+        // { name: 'Главная', path: '/' },
+        { name: 'Портреты', path: '/portraits' },
+        { name: 'Свадьбы', path: '/portraits2' },
+        { name: 'Сторис', path: '/portraits3' },
+        { name: 'Ретушь', path: '/portraits4' },
+        { name: 'Инфо', path: '/about' },
         { name: 'Контакты', path: '/contacts' },
-        { name: 'О себе', path: '/about' },
       ]
     }
   },
@@ -118,9 +124,9 @@ button svg {
   margin-bottom: 40px;
 }
 
-.menu li {
-  padding: 0 20px;
-  margin-bottom: 24px;
+.menu li:not(:last-of-type) {
+  margin-bottom: 20px;
+
 }
 
 .menu li>a {

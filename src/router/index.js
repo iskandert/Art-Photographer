@@ -10,14 +10,34 @@ const router = createRouter({
       component: HomeView
     },
     {
-      path: '/about',
-      name: 'about',
-      component: () => import('../views/AboutView.vue')
+      path: '/portraits',
+      name: 'portraits',
+      component: () => import('../views/PortraitsView.vue')
+    },
+    {
+      path: '/portraits2',
+      name: 'portraits2',
+      component: () => import('../views/PortraitsView.vue')
+    },
+    {
+      path: '/portraits3',
+      name: 'portraits3',
+      component: () => import('../views/PortraitsView.vue')
+    },
+    {
+      path: '/portraits4',
+      name: 'portraits4',
+      component: () => import('../views/PortraitsView.vue')
     },
     {
       path: '/contacts',
       name: 'contacts',
       component: () => import('../views/ContactsView.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('../views/AboutView.vue')
     },
     {
       path: '/:pathMatch(.+)+',

@@ -1,7 +1,7 @@
 /* color palette */
 :root {
   --color-white: #ffffff;
-  --color-white-transparent: rgba(255, 255, 255, 0.9);
+  --color-white-transparent: rgba(255, 255, 255, 0.95);
   --color-white-soft: #f8f8f8;
 
   --color-black: #181818;
