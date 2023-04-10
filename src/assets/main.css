@@ -28,13 +28,13 @@ button {
   border: none;
 }
 
-button,
-button:hover,
-button:active {
+.button,
+.button:hover,
+.button:active {
   transition: 0.4s all;
 }
 
-button svg {
+.button svg {
   position: absolute;
   left: 0;
   right: 0;
@@ -46,7 +46,7 @@ button svg {
 }
 
 @media (hover: hover) {
-  button:hover {
+  .button:hover {
     background-color: var(--ph-color-shadow-hover);
     -webkit-box-shadow: var(--ph-shadow-hover);
     -moz-box-shadow: var(--ph-shadow-hover);
@@ -58,7 +58,7 @@ button svg {
   } */
 }
 
-button:active {
+.button:active {
   background-color: var(--ph-color-shadow-active);
   -webkit-box-shadow: var(--ph-shadow-active);
   -moz-box-shadow: var(--ph-shadow-active);

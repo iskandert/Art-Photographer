@@ -9,4 +9,31 @@ const photosURL = [
   'https://img.freepik.com/free-photo/high-fashion-look-glamor-closeup-portrait-beautiful-sexy-stylish-caucasian-young-woman-model_158538-2774.jpg?w=360&t=st=1680510129~exp=1680510729~hmac=cd15a4af0f6677a0d83efe14406356b03697145fcc9fa6b0bd296217ca463730'
 ]
 
-export { photosURL }
+const links = [
+  {
+    name: 'inst',
+    link: '#',
+    text: '@irina_riiii',
+    icon: 'LogoInstagram'
+  },
+  {
+    name: 'tg',
+    link: 'https://t.me/irina_riiii',
+    text: '@irina_riiii',
+    icon: 'LogoTelegram'
+  },
+  {
+    name: 'vk',
+    link: 'https://vk.com/irina_riii',
+    text: 'Ирина Толстых',
+    icon: 'LogoVkontakte'
+  },
+  {
+    name: 'mail',
+    link: 'mailto:artistirinka@gmail.com',
+    text: 'artistirinka@gmail.com',
+    icon: 'LogoMail'
+  }
+]
+
+export { photosURL, links }

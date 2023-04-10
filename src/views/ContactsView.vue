@@ -5,21 +5,9 @@
       и&nbsp;заявкам на&nbsp;съемки
     </p>
     <div class="links">
-      <a href="#" target="_blank">
-        <LogoInstagram type="fill" />
-        <span>@irina_riiii</span>
-      </a>
-      <a href="https://t.me/irina_riiii" target="_blank">
-        <LogoTelegram type="fill" />
-        <span>@irina_riiii</span>
-      </a>
-      <a href="https://vk.com/irina_riii" target="_blank">
-        <LogoVkontakte type="fill" />
-        <span>Ирина Толстых</span>
-      </a>
-      <a href="mailto:artistirinka@gmail.com" type="email" target="_blank">
-        <LogoMail type="fill" />
-        <span>artistirinka@gmail.com</span>
+      <a v-for="link in links" :href="link.link" target="_blank">
+        <component :is="link.icon" type="fill" />
+        <span>{{ link.text }}</span>
       </a>
     </div>
   </div>
@@ -73,6 +61,7 @@ import LogoInstagram from '../components/icons/LogoInstagram.vue'
 import LogoTelegram from '../components/icons/LogoTelegram.vue'
 import LogoVkontakte from '../components/icons/LogoVkontakte.vue'
 import LogoMail from '../components/icons/LogoMail.vue'
+import { links } from '../config'
 
 export default {
   components: {
@@ -80,6 +69,11 @@ export default {
     LogoTelegram,
     LogoVkontakte,
     LogoMail,
+  },
+  data() {
+    return {
+      links
+    }
   }
 }
 </script>
