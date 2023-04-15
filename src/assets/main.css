@@ -1,7 +1,18 @@
 @import './base.css';
 
+body.noScroll {
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  body.noScroll {
+    padding-right: 17px;
+  }
+}
+
 #app {
   width: 100%;
+  position: static;
   /* max-width: 1280px;
   margin: 0 auto;
 

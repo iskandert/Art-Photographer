@@ -1,15 +1,16 @@
 <template>
   <Header />
-  <div class="cont" :style="`height:${vhComp}px`">
+  <!-- <div class="cont" :style="`height:${vhComp}px`"> -->
+  <div class="cont">
     <div class="main">
       <!-- <div /> -->
       <router-view></router-view>
       <!-- <h1>
           Здесь будет сайт крутого фотографа
         </h1> -->
-      <Footer class="footer" />
     </div>
   </div>
+  <Footer class="footer" />
   <!-- <div class="ggg">
     ggg
   </div> -->
@@ -27,19 +28,22 @@ export default {
   },
   data() {
     return {
-      vh: window.innerHeight * 0.01,
+      // vh: window.innerHeight * 0.01,
     }
   },
   computed: {
-    vhComp() {
-      return this.$store.getters.getVh * 100
-    }
+    // vhComp() {
+    //   return this.$store.getters.getVh * 100
+    // }
+  },
+  methods: {
+
   },
   created() {
-    window.addEventListener('resize', () => {
-      this.$store.commit('SET_VH', window.innerHeight * 0.01)
-      // document.documentElement.style.setProperty('--vh', `${vh}px`);
-    });
+    // window.addEventListener('resize', () => {
+    //   this.$store.commit('SET_VH', window.innerHeight * 0.01)
+    //   // document.documentElement.style.setProperty('--vh', `${vh}px`);
+    // });
   },
 }
 </script>
@@ -47,9 +51,8 @@ export default {
 <style scoped>
 .cont {
   width: 100%;
-  padding-top: 40px;
+  padding: 40px 0 100px;
   z-index: 90;
-  overflow-y: auto;
 }
 
 .main {
@@ -59,6 +62,12 @@ export default {
   justify-content: space-between;
 }
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 
 h1 {
   text-align: center;

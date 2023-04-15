@@ -6,13 +6,13 @@
       <Close class="close" :class="{ rotated: !showMenu }" />
     </button>
   </header>
-  <div class="menu" :class="{ showed: showMenu }" :style="`height:${vhComp}px`">
+  <div class="menu" :class="{ showed: showMenu }" style="height:200vh">
     <ul>
       <li v-for="(item, idx) in menu" :key="idx" :class="{ active: $route.path === item.path }">
-        <RouterLink v-if="item.path" :to="item.path" @click="showMenu = false">
+        <RouterLink v-if="item.path" :to="item.path" @click="toggleMenu">
           {{ item.name }}
         </RouterLink>
-        <a href="#" @click="showMenu = false" v-else>{{ item.name }}</a>
+        <a href="#" @click="toggleMenu" v-else>{{ item.name }}</a>
       </li>
     </ul>
   </div>
@@ -42,13 +42,14 @@ export default {
     }
   },
   computed: {
-    vhComp() {
-      return this.$store.getters.getVh * 100
-    }
+    // vhComp() {
+    //   return this.$store.getters.getVh * 100
+    // }
   },
   methods: {
     toggleMenu() {
       this.showMenu = !this.showMenu
+      document.getElementsByTagName('body')[0].classList.toggle('noScroll')
     }
   },
 }
@@ -106,7 +107,7 @@ button svg {
   pointer-events: none;
   transition: .4s all;
   display: flex;
-  align-items: center;
+  align-items: start;
   justify-content: center;
 }
 
@@ -121,7 +122,7 @@ button svg {
   font-size: 36px;
   line-height: 72px;
   text-align: center;
-  margin-bottom: 40px;
+  margin-top: 80px;
 }
 
 .menu li:not(:last-of-type) {
