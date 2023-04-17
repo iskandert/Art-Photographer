@@ -9,10 +9,10 @@
   <div class="menu" :class="{ showed: showMenu }" style="height:200vh">
     <ul>
       <li v-for="(item, idx) in menu" :key="idx" :class="{ active: $route.path === item.path }">
-        <RouterLink v-if="item.path" :to="item.path" @click="toggleMenu">
+        <RouterLink class="title-text" v-if="item.path" :to="item.path" @click="toggleMenu">
           {{ item.name }}
         </RouterLink>
-        <a href="#" @click="toggleMenu" v-else>{{ item.name }}</a>
+        <a href="#" @click="toggleMenu" class="title-text" v-else>{{ item.name }}</a>
       </li>
     </ul>
   </div>
@@ -71,6 +71,7 @@ header {
 
 h1 {
   font-size: 18px;
+  font-weight: normal;
 }
 
 button {
