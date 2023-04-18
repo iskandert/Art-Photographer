@@ -78,7 +78,13 @@ h1 {
   background-color: aqua;
 }
 
-.wrapper {
+:deep(.wrapper) {
   padding: 15px 15px 0;
+}
+
+@media (min-width: 992px) {
+  .cont {
+    padding-top: 90px;
+  }
 }
 </style>

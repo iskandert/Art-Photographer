@@ -3,7 +3,7 @@
     <!-- <h1>This is an about page</h1> -->
     <div class="infoCard" v-for="(card, idx) in infoCards" :key="idx">
       <div class="text">
-        <h4>{{ card.title }}</h4>
+        <h4 class="header">{{ card.title }}</h4>
         <p>{{ card.message }}</p>
       </div>
       <div class="image" :style="`background-image: url(${card.img})`">
@@ -27,13 +27,9 @@ export default {
 
 <style scoped>
 h4 {
-  font-weight: light;
-  font-size: 24px;
-  margin-bottom: 5px;
-}
-
-p {
-  font-size: 16px;
+  /*font-weight: 700;*/
+  font-size: 30px;
+  margin-bottom: 15px;
 }
 
 .image {

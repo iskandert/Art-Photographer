@@ -1,12 +1,24 @@
 <template>
   <header>
-    <h1>Ирина Толстых</h1>
+    <RouterLink class="title-text" to="/" @click="showMenu = false">
+      <h1>Ирина Толстых</h1>
+    </RouterLink>
     <button class="button" @click="toggleMenu">
       <Burger class="burger" :class="{ rotated: showMenu }" />
       <Close class="close" :class="{ rotated: !showMenu }" />
     </button>
+    <div class="menu desktop">
+      <ul>
+        <li v-for="(item, idx) in menu" :key="idx" :class="{ active: $route.path === item.path }">
+          <RouterLink class="title-text" v-if="item.path" :to="item.path">
+            {{ item.name }}
+          </RouterLink>
+          <a href="#" @click="toggleMenu" class="title-text" v-else>{{ item.name }}</a>
+        </li>
+      </ul>
+    </div>
   </header>
-  <div class="menu" :class="{ showed: showMenu }" style="height:200vh">
+  <div class="menu mobile" :class="{ showed: showMenu }">
     <ul>
       <li v-for="(item, idx) in menu" :key="idx" :class="{ active: $route.path === item.path }">
         <RouterLink class="title-text" v-if="item.path" :to="item.path" @click="toggleMenu">
@@ -66,20 +78,21 @@ header {
   width: 100%;
   z-index: 110;
   background-color: var(--ph-color-background);
-  border-bottom: var(--ph-border);
+  /*border-bottom: var(--ph-border);*/
 }
 
 h1 {
-  font-size: 18px;
-  font-weight: normal;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: bold;
 }
 
-button {
+.button {
   aspect-ratio: 1;
   border-radius: 50%;
 }
 
-button svg {
+.button svg {
   transition: .4s all;
 }
 
@@ -98,21 +111,25 @@ button svg {
 }
 
 .menu {
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  background-color: var(--ph-color-background-transparent);
-  z-index: 100;
-  opacity: 0;
-  pointer-events: none;
   transition: .4s all;
   display: flex;
   align-items: start;
   justify-content: center;
 }
 
-.showed {
+.menu.mobile {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background-color: var(--ph-color-background-transparent);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.menu.mobile.showed {
   pointer-events: all;
   opacity: 1;
 }
@@ -121,18 +138,21 @@ button svg {
   list-style: none;
   padding: 0;
   font-size: 36px;
-  line-height: 72px;
+  line-height: 54px;
   text-align: center;
   margin-top: 80px;
+  display: grid;
+  /*grid-template-rows: repeat(2, min-content);*/
 }
 
-.menu li:not(:last-of-type) {
-  margin-bottom: 20px;
+.menu.mobile li:not(:last-of-type) {
+  margin-bottom: 40px;
 
 }
 
 .menu li>a {
-  font-weight: 200;
+  display: block;
+  font-weight: 300;
   padding: 0 20px 5px;
   color: #000000;
 }
@@ -157,5 +177,53 @@ button svg {
 .menu li.active>a {
   border-bottom: 2px solid var(--ph-color-text-active);
   color: var(--ph-color-text-active);
+}
+
+.menu.desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .menu>ul {
+    grid-template-columns: repeat(2, max-content);
+    column-gap: 20px;
+    margin-top: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    height: 90px;
+    flex-direction: column;
+  }
+
+  h1 {
+    margin-bottom: 15px;
+  }
+
+  .button {
+    display: none;
+  }
+
+  .menu.mobile {
+    display: none;
+  }
+
+  .menu.desktop {
+    display: flex;
+  }
+
+  .menu>ul {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    line-height: unset;
+  }
+
+  .menu li:not(:last-of-type) {
+    margin-right: 22px;
+
+  }
 }
 </style>

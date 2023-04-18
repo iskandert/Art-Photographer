@@ -13,7 +13,7 @@ body.noScroll {
 #app {
   width: 100%;
   position: static;
-  font-weight: 300;
+  /* font-weight: 300; */
   /* max-width: 1280px;
   margin: 0 auto;
 
@@ -26,8 +26,8 @@ h2,
 h3,
 h4,
 .title-text {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
 }
 
 /* a,
